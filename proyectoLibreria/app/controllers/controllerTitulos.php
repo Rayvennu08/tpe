@@ -19,6 +19,4 @@ class controllerTitulos {
         $books = $this->model->getAllTitles();
         $this->view->showBooks($books);
     }
-
-
 }

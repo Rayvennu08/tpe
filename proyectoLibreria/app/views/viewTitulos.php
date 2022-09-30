@@ -10,8 +10,7 @@ class titulosView {
 
     function showHome(){
         //Asigno variables al tpl Smarty
-        $this->smarty->assign('home', "Home");
-        $this->smarty->assign('bookList', "Ver libros");
+        $this->smarty->assign('Home', "Inicio");
 
         //Muestro el tpl
         $this->smarty->display('templates/home.tpl');
@@ -22,7 +21,6 @@ class titulosView {
         $this->smarty->assign('books', $books);
 
         $this->smarty->display('templates/books.tpl');
-
     }
 
 }
