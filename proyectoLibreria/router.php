@@ -1,5 +1,4 @@
 <?php
-require_once('index.php');
 require_once('app/controllers/controllerTitulos.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -21,7 +20,11 @@ switch ($params[0]) {
 
     case 'listado_libros':
         $titulosController->showBookList();
-        break;    
+        break;
+        
+    case 'characterList':
+        $titulosController->showCharacterList();
+        break;
 
     /*case 'list':
         $taskController->showTasks();

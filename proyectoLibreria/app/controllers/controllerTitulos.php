@@ -11,14 +11,14 @@ class controllerTitulos {
         $this->model = new titulosModel();
         $this->view = new titulosView();
     }
-
+    
+    public function showHome(){
+        $this->view->showHome();
+    }
     public function showBookList() {
         $books = $this->model->getAllTitles();
         $this->view->showBooks($books);
     }
 
-    public function showHome(){
-        $this->view->showHome();
-    }
 
 }
