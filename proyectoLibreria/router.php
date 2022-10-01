@@ -1,29 +1,30 @@
 <?php
-require_once('app/controllers/controllerTitulos.php');
+require_once('app/controllers/controllerGames.php');
+require_once('app/controllers/controllerBrands.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'home'; // acción por defecto
+$action = 'brandList'; // acción por defecto
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 
-// parsea la accion Ej: dev/juan --> ['dev', juan]
 $params = explode('/', $action);
 
-$titulosController = new controllerTitulos();
-// tabla de ruteo
+$gamesController = new controllerGames();
+$brandsController = new controllerBrands();
+//Tabla de ruteo
 switch ($params[0]) {
     case 'home':
-        $titulosController->showHome();
+        $gamesController->showHome();
         break;
 
-    case 'listado_libros':
-        $titulosController->showBookList();
+    case 'gameList':
+        $gamesController->showGameList();
         break;
         
-    case 'characterList':
-        $titulosController->showCharacterList();
+    case 'brandList':
+        $brandsController->showBrandList();
         break;
 
     /*case 'list':

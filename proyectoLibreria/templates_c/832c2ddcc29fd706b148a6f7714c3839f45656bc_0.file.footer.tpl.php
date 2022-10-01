@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 20:40:51
-  from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\footer.tpl' */
+/* Smarty version 4.2.1, created on 2022-10-01 00:36:48
+  from 'C:\xampp\htdocs\tpe1\proyectoLibreria\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633889b3b92b23_52154586',
+  'unifunc' => 'content_63376f80a4e4f1_02788022',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'f9ff848d7b6d8bb3bdeeb181621bfc87beccf5ba' => 
+    '832c2ddcc29fd706b148a6f7714c3839f45656bc' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\footer.tpl',
+      0 => 'C:\\xampp\\htdocs\\tpe1\\proyectoLibreria\\templates\\footer.tpl',
       1 => 1664577406,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633889b3b92b23_52154586 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63376f80a4e4f1_02788022 (Smarty_Internal_Template $_smarty_tpl) {
 ?></main>
 <!-- fin main container -->
 <footer>
