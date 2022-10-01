@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 22:25:05
-  from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\games.tpl' */
+/* Smarty version 4.2.1, created on 2022-10-01 22:58:17
+  from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\filterGames.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6338a2212d5548_57183153',
+  'unifunc' => 'content_6338a9e93cfb19_90768257',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '62664749422a91066ccd163458e345ad0bd5d228' => 
+    '68c34a2fb4a961dc402fd8c5bb2927019391b998' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\games.tpl',
-      1 => 1664655901,
+      0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\filterGames.tpl',
+      1 => 1664657895,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6338a2212d5548_57183153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6338a9e93cfb19_90768257 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
-</h1>
 <table class="table">
     <thead bgcolor='#BFBFBF'>
         <td style="font-weight: bold;">Titulo</td>
@@ -41,19 +39,16 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['game']->value) {
 $_smarty_tpl->tpl_vars['game']->do_else = false;
 ?>
             <tr>
-                <td style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['game']->value->juego_name;?>
+            <td><?php echo $_smarty_tpl->tpl_vars['game']->value->juego_name;?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['game']->value->calificacion;?>
+            <td><?php echo $_smarty_tpl->tpl_vars['game']->value->calificacion;?>
 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['game']->value->brand_name;?>
+            <td><?php echo $_smarty_tpl->tpl_vars['game']->value->brand_name;?>
 </td>
             </tr>
-        <?php ob_start();
+        <?php
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable1 = ob_get_clean();
-echo $_prefixVariable1;?>
-
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </tbody>
 </table>
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

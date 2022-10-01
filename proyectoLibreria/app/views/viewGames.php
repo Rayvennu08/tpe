@@ -16,7 +16,7 @@ class gamesView {
 
 
         //Muestro el tpl
-        $this->smarty->display('templates/home.tpl');
+        $this->smarty->display('templates/login.tpl');
     }
     
     function showGames($games){

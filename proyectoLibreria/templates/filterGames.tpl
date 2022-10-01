@@ -1,5 +1,4 @@
 {include file="header.tpl"}
-<h1>{$title}</h1>
 <table class="table">
     <thead bgcolor='#BFBFBF'>
         <td style="font-weight: bold;">Titulo</td>
@@ -9,11 +8,11 @@
     <tbody>
         {foreach from=$games item=$game}
             <tr>
-                <td style="font-weight: 600;">{$game->juego_name}</td>
-                <td>{$game->calificacion}</td>
-                <td>{$game->brand_name}</td>
+            <td>{$game->juego_name}</td>
+            <td>{$game->calificacion}</td>
+            <td>{$game->brand_name}</td>
             </tr>
-        {{/foreach}}
+        {/foreach}
     </tbody>
 </table>
 {include file="footer.tpl"}

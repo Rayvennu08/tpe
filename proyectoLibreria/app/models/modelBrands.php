@@ -17,4 +17,13 @@ class brandsModel{
         $brands=$query->fetchAll(PDO::FETCH_OBJ);
         return $brands;
     }
+
+    function filterBrand($row, $object, $name) {
+
+        $query = $this->db->prepare("SELECT $row FROM $object WHERE brand_name = '$name'");
+        $query->execute();
+        $object = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $object;
+    }
 }

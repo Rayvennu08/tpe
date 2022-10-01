@@ -13,4 +13,10 @@ class brandsView{
 
         $this->smarty->display('templates/brands.tpl');
     }
+
+    function filterBrand($games){
+        $this->smarty->assign('games', $games);
+
+        $this->smarty->display('templates/filterGames.tpl');
+    }
 }

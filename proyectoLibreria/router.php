@@ -27,6 +27,10 @@ switch ($params[0]) {
         $brandsController->showBrandList();
         break;
 
+        case $params[0]:
+            $brandsController->filterBrands($params[0]);
+        break;
+
     /*case 'list':
         $taskController->showTasks();
         break;
