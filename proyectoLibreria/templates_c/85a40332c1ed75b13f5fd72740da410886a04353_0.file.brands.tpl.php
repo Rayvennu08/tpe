@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-01 22:29:05
+/* Smarty version 4.2.1, created on 2022-10-02 23:08:30
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\brands.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6338a311cb5bd5_05471865',
+  'unifunc' => 'content_6339fdcee96706_23804337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85a40332c1ed75b13f5fd72740da410886a04353' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\brands.tpl',
-      1 => 1664656144,
+      1 => 1664744909,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6338a311cb5bd5_05471865 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6339fdcee96706_23804337 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -39,9 +39,13 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['brand']->value) 
 $_smarty_tpl->tpl_vars['brand']->do_else = false;
 ?>
             <tr>
-                <td style="font-weight: 600;"><a href="<?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_name;?>
-"><?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_name;?>
-</a></td>
+                <td>
+                    <a href="filtrado/<?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_name;?>
+" style="text-decoration: none; font-weight: 600;">
+                        <?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_name;?>
+
+                    </a>
+                    </td>
             </tr>
         <?php ob_start();
 }

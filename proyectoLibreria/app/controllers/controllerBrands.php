@@ -11,6 +11,10 @@ class controllerBrands{
         $this->view = new brandsView();
     }
 
+    public function showLoginSite(){
+        $this->view->showLogin();
+    }
+
     public function showBrandList(){
         $brands = $this->model->getAllBrands();
         $this->view->showBrands($brands);

@@ -8,7 +8,7 @@ class gamesView {
         $this->smarty = new Smarty(); 
     }
 
-    function showHome(){
+    function showLogin(){
         //Asigno variables al tpl Smarty
         $this->smarty->assign('Login', "Bienvenido, ingrese sus datos para ingresar.");
         $this->smarty->assign('user', "Username:");
@@ -18,7 +18,7 @@ class gamesView {
         //Muestro el tpl
         $this->smarty->display('templates/login.tpl');
     }
-    
+
     function showGames($games){
         $this->smarty->assign('title', "Tabla de videojuegos");
         $this->smarty->assign('games', $games);

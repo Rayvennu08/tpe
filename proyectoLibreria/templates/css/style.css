@@ -1,0 +1,12 @@
+:root {
+    --font-style: 'Nunito Sans', 'sans-serif';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #131315;
+    font-family: var(--font-style);
+}

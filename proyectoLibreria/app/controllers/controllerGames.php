@@ -12,11 +12,24 @@ class controllerGames {
         $this->view = new gamesView();
     }
     
-    public function showHome(){
-        $this->view->showHome();
-    }
     public function showGameList() {
         $games = $this->model->getAllTitles();
         $this->view->showGames($games);
+    }
+
+    function deleteGame(){
+
+    }
+
+    function addGame() {
+        // Validacion de entrada de datos
+
+        $title = $_POST["title"];
+        $qualification = $_POST["qualification"];
+        $brand = $_POST["brand"];
+
+        $id = $this->model->insertGame($title, $qualification, $brand);
+
+        header("Location: " . BASE_URL); 
     }
 }

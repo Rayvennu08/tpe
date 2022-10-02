@@ -1,4 +1,5 @@
 </main>
+</body>
 <!-- fin main container -->
 <footer>
 </footer>

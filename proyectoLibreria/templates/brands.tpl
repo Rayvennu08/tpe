@@ -7,7 +7,11 @@
     <tbody>
         {foreach from=$brands item=$brand}
             <tr>
-                <td style="font-weight: 600;"><a href="{$brand->brand_name}">{$brand->brand_name}</a></td>
+                <td>
+                    <a href="filtrado/{$brand->brand_name}" style="text-decoration: none; font-weight: 600;">
+                        {$brand->brand_name}
+                    </a>
+                    </td>
             </tr>
         {{/foreach}}
     </tbody>

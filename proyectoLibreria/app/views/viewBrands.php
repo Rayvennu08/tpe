@@ -10,8 +10,19 @@ class brandsView{
     function showBrands($brands){
         $this->smarty->assign('title', "Lista de empresas");
         $this->smarty->assign('brands', $brands);
-
+        
         $this->smarty->display('templates/brands.tpl');
+    }
+
+    function showLogin(){
+        //Asigno variables al tpl Smarty
+        $this->smarty->assign('login', "Bienvenido, coloque sus datos para ingresar.");
+        $this->smarty->assign('user', "Username:");
+        $this->smarty->assign('pass', "Password:");
+
+
+        //Muestro el tpl
+        $this->smarty->display('templates/login.tpl');
     }
 
     function filterBrand($games){
@@ -19,4 +30,5 @@ class brandsView{
 
         $this->smarty->display('templates/filterGames.tpl');
     }
+    
 }

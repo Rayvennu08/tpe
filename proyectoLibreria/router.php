@@ -15,35 +15,39 @@ $gamesController = new controllerGames();
 $brandsController = new controllerBrands();
 //Tabla de ruteo
 switch ($params[0]) {
-    case 'home':
-        $gamesController->showHome();
+    case 'login':
+            $brandsController->showLoginSite();
         break;
 
     case 'gameList':
-        $gamesController->showGameList();
+            $gamesController->showGameList();
         break;
         
     case 'brandList':
-        $brandsController->showBrandList();
+            $brandsController->showBrandList();
         break;
+    
+    case 'delete':
+        $gamesController->deleteGame();
+    break;
 
-        case $params[0]:
-            $brandsController->filterBrands($params[0]);
-        break;
-
-    /*case 'list':
-        $taskController->showTasks();
-        break;
     case 'add':
-        $taskController->addTask();
+            $gamesController->addGame();
         break;
+
+        case 'filtrado':
+            $brandsController->filterBrands($params[1]);
+        break;
+
+    /*
     case 'delete':
         // obtengo el parametro de la acción
         $id = $params[1];
         $taskController->deleteTask($id);
-        break;*/
+        break;
+    */
 
     default:
-        echo('404 Page not found');
+        echo('<h1>Error 404 - Page not found</h1>');
         break;
 }
