@@ -27,9 +27,17 @@ switch ($params[0]) {
             $brandsController->showBrandList();
         break;
     
+    case 'finalize':
+
+    
     case 'delete':
-        $gamesController->deleteGame();
+        $id = $params[1];
+        $gamesController->deleteGame($id);
     break;
+    
+    case 'finalize':
+        $id = $params[1];
+        $gamesController->finalizeGame($id);
 
     case 'add':
             $gamesController->addGame();

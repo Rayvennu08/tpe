@@ -17,12 +17,14 @@ class controllerGames {
         $this->view->showGames($games);
     }
 
-    function deleteGame(){
-
+    function deleteGame($id){
+        $this->model->deleteGameById($id);
+        header("Location: " . BASE_URL);
     }
 
     function addGame() {
         // Validacion de entrada de datos
+
 
         $title = $_POST["title"];
         $qualification = $_POST["qualification"];
@@ -30,6 +32,11 @@ class controllerGames {
 
         $id = $this->model->insertGame($title, $qualification, $brand);
 
+        header("Location: " . BASE_URL); 
+    }
+
+    function finalizeGame($id){
+        $this->model->finalize($id);
         header("Location: " . BASE_URL); 
     }
 }

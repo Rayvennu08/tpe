@@ -1,3 +1,8 @@
+.finalizado span {
+    opacity: .6;
+    text-decoration: line-through;
+}
+
 :root {
     --font-style: 'Nunito Sans', 'sans-serif';
 }

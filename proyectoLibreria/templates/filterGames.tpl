@@ -7,15 +7,15 @@
         <td style="font-weight: bold;">Empresa</td>
     </thead>
     <tbody>
-     <?php while($row = mysqli_fetch_array($brands)): ?>
-      {foreach from=$games item=$game}
+    <?php while($row = mysqli_fetch_array($brands)): ?>
+    {foreach from=$games item=$game}
             <tr>
                 <td><a href="show.php?id=<?php echo ?>
                 " style="text-decoration: none; color: rgb(159, 16, 25);">{$game->juego_name}</a></td>
                 <td>{$game->calificacion}</td>
                 <td>{$game->brand_name}</td>
             </tr>
-        {/foreach} 
+    {/foreach} 
     <? php endwhile ?>
     </tbody>
 </table>

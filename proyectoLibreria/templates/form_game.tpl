@@ -17,7 +17,10 @@
 
     <div class="form-group">
         <label>Empresa</label>
-        <textarea name="brand" class="form-control"></textarea>
+        {foreach }
+        <select name="brand" class="form-control">
+        
+        </select>
     </div>
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>

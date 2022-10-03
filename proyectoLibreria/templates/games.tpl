@@ -13,12 +13,21 @@
     </thead>
     <tbody>
         {foreach from=$games item=$game}
+            <li class='
+                list-group-item d-flex justify-content-between align-items-center
+                {if $game->finalizado} finalizado {/if}
+            '>
+            
             <tr class="table-info">
                 <td style="font-weight: 600;">{$game->juego_name}</td>
                 <td>{$game->calificacion}</td>
                 <td>{$game->brand_name}</td>
-                <td><a href='delete/'type='button' class="btn btn-success">Finalizar</button></td>
-                <td><a href='finalize/' type='button' class="btn btn-danger">Eliminar</button></td>
+                <td><a href='delete/{$game->id_juego}'type='button' class="btn btn-success">Finalizar</button></td>
+                <td>
+                    {if !$game->finalizado}
+                        <a href='finalize/{$game->$id}' type='button' class="btn btn-danger">Eliminar</button>
+                    {/if}
+                </td>
             </tr>
         {{/foreach}}
     </tbody>
