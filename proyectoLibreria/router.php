@@ -27,26 +27,35 @@ switch ($params[0]) {
             $brandsController->showBrandList();
         break;
     
-    case 'finalize':
-
+    case 'ver_juego':
+        $id = $params[1];
+        $gamesController->showGame($id);
+        break;
+    
+    case 'Mandar_BD':
+        $gamesController->saveNewGame();
+        break;
     
     case 'delete':
         $id = $params[1];
         $gamesController->deleteGame($id);
     break;
-    
-    case 'finalize':
-        $id = $params[1];
-        $gamesController->finalizeGame($id);
+
+    case 'editar':
+        $gamesController->showFormUpdateGame();
+        break;
 
     case 'add':
-            $gamesController->addGame();
+            $gamesController->showFormAddGame();
         break;
 
-        case 'filtrado':
+    /*case 'filtrado':
             $brandsController->filterBrands($params[1]);
-        break;
+        break;*/
 
+        case 'Filtrar':
+            $gamesController->filterGamesByBrand();
+        break;
     /*
     case 'delete':
         // obtengo el parametro de la acción

@@ -25,4 +25,49 @@ class gamesView {
 
         $this->smarty->display('templates/games.tpl');
     }
+
+    function showGame($game){
+        $titulo = "Informacion sobre la obra";
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assignt('game', $game);
+
+        $this->smarty->display('templates/gameDetail.tpl');
+    }
+
+    function showGamesFiltered($games, $brand){
+        $titulo = "Lista de juegos por su respectiva empresa: ";
+
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('games', $games);
+        $this->smarty->assign('empresas', $brand);
+
+        $this->smarty->display('templates/games.tpl');
+    }
+
+    /*Funcion para forAddGame.tpl*/
+    function showFormAddJuego($brands){
+        $accion = "Mandar_BD";
+        $titulo = "Alta de videojuego";
+        $boton = "Guardar";
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('boton', $boton);
+        $this->smarty->assign('accion', $accion);
+        $this->smarty->assign('brands', $brands);
+        // $this->smarty->assign('empresas', $marcas);
+
+        $this->smarty->display('templates/formAddGame.tpl');
+    }
+
+    function showFormUpdateGame($brands, $game, $brandGame){
+        $accion = "editar";
+        $titulo = "Modificacion de videojuego";
+        $boton = "Modificar";
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('boton', $boton);
+        $this->smarty->assign('accion', $accion);
+        $this->smarty->assign('empresas', $brands);
+        $this->smarty->assign('empresaJuego', $brandName);
+        $this->smarty->assign('juego', $game);
+        $this->smarty->display('addFormGame.tpl');
+    }
 }

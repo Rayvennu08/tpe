@@ -17,7 +17,6 @@
 
     <div class="form-group">
         <label>Empresa</label>
-        {foreach }
         <select name="brand" class="form-control">
         
         </select>
