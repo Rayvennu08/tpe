@@ -1,46 +1,47 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-04 14:27:00
+/* Smarty version 4.2.1, created on 2022-10-04 21:58:15
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\formAddGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633c26943aefb2_23235631',
+  'unifunc' => 'content_633c9057e9f884_19441769',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '153768ebfa83f8e8ed032027e549f42865639972' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\formAddGame.tpl',
-      1 => 1664883315,
+      1 => 1664913495,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633c26943aefb2_23235631 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633c9057e9f884_19441769 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
+<h1 style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
 
 <form action="<?php echo $_smarty_tpl->tpl_vars['accion']->value;?>
-" method="POST">
+" method="POST" style="text-align: center;">
     <?php if ($_smarty_tpl->tpl_vars['accion']->value == "Mandar_BD") {?>
         <div>
             <input type="text" name="id" id="" value="" hidden>
         </div>
         <div>
             <label for="title">Videojuego:</label>
-            <input type="text" name="title" id="" value="">
+            <input type="text" class="form-label" name="title" id="" value="">
         </div>
         <div>
             <label for="qualification">Calificacion:</label>
-            <input type="text" name="qualification" id="" value="">
+            <input type="text" class="form-label" name="qualification" id="" value="">
         </div>
         <div>
             <label for="brand">Empresa:</label>
@@ -117,5 +118,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <?php }?>
 
 
-</form><?php }
+</form>
+<?php $_smarty_tpl->_subTemplateRender('file:footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

@@ -16,8 +16,9 @@ class controllerGames {
     }
     
     public function showGameList() {
+        $brands = $this->brandsModel->getAllBrands();
         $games = $this->model->getAllTitles();
-        $this->view->showGames($games);
+        $this->view->showGames($games, $brands);
     }
 
     function deleteGame($id){
@@ -39,9 +40,9 @@ class controllerGames {
     }
 
     function filterGamesByBrand(){
-        var_dump($_POST);
-        $id_brand = $_POST['brand'];
-        $games = $this->model->getGameByIdBrand($id_brand);
+        $brand = $_POST['brand'];
+        $games = $this->model->getGameByIdBrand($brand);
+        
         $brand = $this->brandsModel->getAllBrands();
         $this->view->showGamesFiltered($games, $brand);
     }

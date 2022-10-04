@@ -7,7 +7,6 @@
         <td style="font-weight: bold;">Empresa</td>
     </thead>
     <tbody>
-    <?php while($row = mysqli_fetch_array($brands)): ?>
     {foreach from=$games item=$game}
             <tr>
                 <td><a href="show.php?id=<?php echo ?>
@@ -16,7 +15,6 @@
                 <td>{$game->brand_name}</td>
             </tr>
     {/foreach} 
-    <? php endwhile ?>
     </tbody>
 </table>
 {include file="footer.tpl"}

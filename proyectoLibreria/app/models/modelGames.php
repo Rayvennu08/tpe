@@ -3,7 +3,7 @@ class gamesModel{
     private $db;
 
     public function __construct(){
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=listgames;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=listajuegos;charset=utf8', 'root', '');
     }
 
     /* Devuelve la lista de juegos completa.*/
@@ -27,7 +27,7 @@ class gamesModel{
     }
 
     function getGameByIdBrand($id){
-        $query = $this->db->prepare("SELECT id_juego, juego_name, brand_name, calificacion FROM games where id_juego = ?");
+        $query = $this->db->prepare("SELECT juego_name, calificacion, id_brand FROM games WHERE id_brand = ?");
         $query->execute([$id]);
 
         $games = $query->fetchAll(PDO ::FETCH_OBJ);
@@ -35,9 +35,9 @@ class gamesModel{
     }
 
     /*Inserto un item en la base de datos*/
-    public function saveRegister($title, $qualification, $brand){
-        $query = $this->db->prepare("INSERT INTO games (juego_name, calificacion, brand_name, id_juego) VALUES (?, ?, ?, ?)");
-        $query->execute([$title, $qualification, $brand]);
+    public function saveRegister($title, $qualification, $id_brand){
+        $query = $this->db->prepare("INSERT INTO games (juego_name, calificacion, id_brand) VALUES (?, ?, ?)");
+        $query->execute([$title, $qualification, $id_brand]);
     }
 
     /*Inserta un juego en la base de datos.*/

@@ -49,13 +49,14 @@ switch ($params[0]) {
             $gamesController->showFormAddGame();
         break;
 
+        case 'Filtrar':
+            $gamesController->filterGamesByBrand();
+        break;
+        
     /*case 'filtrado':
             $brandsController->filterBrands($params[1]);
         break;*/
 
-        case 'Filtrar':
-            $gamesController->filterGamesByBrand();
-        break;
     /*
     case 'delete':
         // obtengo el parametro de la acción

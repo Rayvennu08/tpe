@@ -8,9 +8,9 @@
         {foreach from=$brands item=$brand}
             <tr>
                 <td>
-                    <a href="filtrado/{$brand->brand_name}" style="text-decoration: none; font-weight: 600;">
+                    <p style="color:teal; font-weight: 600;">
                         {$brand->brand_name}
-                    </a>
+                    </p>
                     </td>
             </tr>
         {{/foreach}}

@@ -19,9 +19,12 @@ class gamesView {
         $this->smarty->display('templates/login.tpl');
     }
 
-    function showGames($games){
-        $this->smarty->assign('title', "Tabla de videojuegos");
+    function showGames($games, $brands){
+        $this->smarty->assign('titulo', "Tabla de videojuegos");
         $this->smarty->assign('games', $games);
+        $this->smarty->assign('brands', $brands);
+        // var_dump($brands);
+        
 
         $this->smarty->display('templates/games.tpl');
     }

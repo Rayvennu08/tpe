@@ -1,19 +1,19 @@
 {include file="header.tpl"}
 
-<h1>{$titulo}</h1>
+<h1 style="text-align: center;">{$titulo}</h1>
 
-<form action="{$accion}" method="POST">
+<form action="{$accion}" method="POST" style="text-align: center;">
     {if $accion == "Mandar_BD"}
         <div>
             <input type="text" name="id" id="" value="" hidden>
         </div>
         <div>
             <label for="title">Videojuego:</label>
-            <input type="text" name="title" id="" value="">
+            <input type="text" class="form-label" name="title" id="" value="">
         </div>
         <div>
             <label for="qualification">Calificacion:</label>
-            <input type="text" name="qualification" id="" value="">
+            <input type="text" class="form-label" name="qualification" id="" value="">
         </div>
         <div>
             <label for="brand">Empresa:</label>
@@ -66,3 +66,4 @@
 
 
 </form>
+{include file='footer.tpl'}
