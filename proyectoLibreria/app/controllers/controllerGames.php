@@ -15,21 +15,23 @@ class controllerGames {
         $this->brandsModel = new brandsModel();
     }
     
+    /*Funcion para mostrar todos los items de la tabla de games*/
     public function showGameList() {
         $brands = $this->brandsModel->getAllBrands();
         $games = $this->model->getAllTitles();
         $this->view->showGames($games, $brands);
     }
 
+    /*Funcion para eliminar un item de la tabla de games*/
     function deleteGame($id){
         $this->model->deleteGameById($id);
         header("Location: " . BASE_URL . "gameList");
     }
 
-    /*Funcion para ver un item de la tabla de juegos*/
-    function showGame($id){
-        $game = $this->model->getGameById($id);
-        $this->view->showGame($game);
+    /*Funcion para ver un item de la tabla de games*/
+    function showGame($game){
+        $oneGame = $this->model->showGameDescription("*", "games", $game);
+        $this->view->showGame($oneGame);
     }
 
     function showFormAddGame() {
@@ -49,7 +51,6 @@ class controllerGames {
 
 
     function saveNewGame(){
-        var_dump($_POST);
         $title = $_POST['title'];
         $qualification = $_POST['qualification'];
         $brand = $_POST['brand'];
@@ -59,7 +60,8 @@ class controllerGames {
             header("Location: " . BASE_URL . "gameList"); 
         }
         else{
-            echo "¡Debe completar los campos correspondientes!";
+            echo "<h2>¡Debe completar los campos correspondientes!</h2>";
+            echo "<h3>Regrese a la pagina anterior.</h3>";
         }
     }
 

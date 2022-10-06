@@ -16,14 +16,14 @@ class gamesModel{
         return $titulos;
     }
 
-    function getGameById($id){
-        $query = $this->db->prepare("SELECT id_juego, juego_name, calificacion, brand_name FROM games WHERE id_juego = ?");
-        $query->execute([$id]);
+    function showGameDescription($column, $table, $game){
+        $query = $this->db->prepare("SELECT $column FROM $table WHERE juego_name = '$game'");
+        $query->execute();
 
         // Obtengo el resultado
-        $game = $query->fetch(PDO::FETCH_OBJ); // devuelve un arreglo de objeto
+        $showGame = $query->fetch(PDO::FETCH_OBJ); // devuelve un arreglo de objeto
         
-        return $game;
+        return $showGame;
     }
 
     function getGameByIdBrand($id){

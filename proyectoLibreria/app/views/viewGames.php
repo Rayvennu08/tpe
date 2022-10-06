@@ -29,10 +29,10 @@ class gamesView {
         $this->smarty->display('templates/games.tpl');
     }
 
-    function showGame($game){
+    function showGame($oneGame){
         $titulo = "Informacion sobre la obra";
         $this->smarty->assign('titulo', $titulo);
-        $this->smarty->assignt('game', $game);
+        $this->smarty->assignt('games', $oneGame);
 
         $this->smarty->display('templates/gameDetail.tpl');
     }
@@ -42,12 +42,13 @@ class gamesView {
 
         $this->smarty->assign('titulo', $titulo);
         $this->smarty->assign('games', $games);
-        $this->smarty->assign('empresas', $brand);
+        $this->smarty->assign('brands', $brand);
 
         $this->smarty->display('templates/games.tpl');
     }
 
-    /*Funcion para forAddGame.tpl*/
+    /*Funcion para mostrar formulario al usuario
+    para agregar un videojuego*/
     function showFormAddJuego($brands){
         $accion = "Mandar_BD";
         $titulo = "Alta de videojuego";
