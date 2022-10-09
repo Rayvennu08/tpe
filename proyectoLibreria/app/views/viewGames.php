@@ -29,10 +29,10 @@ class gamesView {
         $this->smarty->display('templates/games.tpl');
     }
 
-    function showGame($oneGame){
+    function showGame($game){
         $titulo = "Informacion sobre la obra";
         $this->smarty->assign('titulo', $titulo);
-        $this->smarty->assignt('games', $oneGame);
+        $this->smarty->assign('game', $game);
 
         $this->smarty->display('templates/gameDetail.tpl');
     }

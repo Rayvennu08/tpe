@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-9">
             <div class="form-group">
-                <label>Título</label>
+                <label>a</label>
                 <input name="title" type="text" class="form-control">
             </div>
         </div>

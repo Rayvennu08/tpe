@@ -29,9 +29,9 @@ class controllerGames {
     }
 
     /*Funcion para ver un item de la tabla de games*/
-    function showGame($game){
-        $oneGame = $this->model->showGameDescription("*", "games", $game);
-        $this->view->showGame($oneGame);
+    function showGame($id){
+        $game = $this->model->showGameDescription($id);
+        $this->view->showGame($game);
     }
 
     function showFormAddGame() {

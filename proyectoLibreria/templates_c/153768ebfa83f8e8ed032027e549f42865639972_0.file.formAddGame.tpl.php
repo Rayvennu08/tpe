@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-04 21:58:15
+/* Smarty version 4.2.1, created on 2022-10-08 00:08:31
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\formAddGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633c9057e9f884_19441769',
+  'unifunc' => 'content_6340a35f17a0a7_55551138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '153768ebfa83f8e8ed032027e549f42865639972' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\formAddGame.tpl',
-      1 => 1664913495,
+      1 => 1665180505,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633c9057e9f884_19441769 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6340a35f17a0a7_55551138 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

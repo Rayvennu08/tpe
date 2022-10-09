@@ -1,6 +1,7 @@
 <?php
 
 class brandsModel{
+    
     private $db;
 
     public function __construct() {

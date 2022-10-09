@@ -16,9 +16,9 @@ class gamesModel{
         return $titulos;
     }
 
-    function showGameDescription($column, $table, $game){
-        $query = $this->db->prepare("SELECT $column FROM $table WHERE juego_name = '$game'");
-        $query->execute();
+    function showGameDescription($id){
+        $query = $this->db->prepare("SELECT id_juego, juego_name, sinopsis, calificacion, id_brand FROM games WHERE id_juego = ?");
+        $query->execute([$id]);
 
         // Obtengo el resultado
         $showGame = $query->fetch(PDO::FETCH_OBJ); // devuelve un arreglo de objeto
