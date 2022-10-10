@@ -16,8 +16,17 @@ class controllerBrands{
         $this->view->showBrands($brands);
     }
     
+    public function showBrand(){
+        
+    }
+
     public function filterBrands($name){
         $games = $this->model->filterBrand("*", "games", $name);
         $this->view->filterBrand($games);
+    }
+
+    public function addBrand(){
+        $brands = $this->model->getAllBrands();
+        $this->view->showFormAddBrand($brands);
     }
 }

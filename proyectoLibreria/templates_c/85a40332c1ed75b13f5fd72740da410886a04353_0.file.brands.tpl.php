@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-06 21:01:41
+/* Smarty version 4.2.1, created on 2022-10-10 11:05:11
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\brands.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633f261508bb82_63603030',
+  'unifunc' => 'content_6343e04764e591_19714775',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85a40332c1ed75b13f5fd72740da410886a04353' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\brands.tpl',
-      1 => 1664915191,
+      1 => 1665392710,
       2 => 'file',
     ),
   ),
@@ -22,15 +22,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_633f261508bb82_63603030 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6343e04764e591_19714775 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 <h1><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
 </h1>
+
+<a href="agregar_empresa" type='button' class='btn btn-primary ml-auto'>Agregar empresa</a>
+
 <table class="table">
     <thead>
-        <td bgcolor='#BFBFBF' style="font-weight: bold;">Empresas</td>
+        <tr>
+            <th bgcolor='#BFBFBF' style="font-weight: bold;">Empresas</th>
+            <th>Ver empresa</th>
+            <th>Eliminar empresa</th>
+            <th>Editar empresa</th>
+        </tr>
     </thead>
+    
     <tbody>
         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['brands']->value, 'brand');
@@ -44,7 +54,23 @@ $_smarty_tpl->tpl_vars['brand']->do_else = false;
                         <?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_name;?>
 
                     </p>
-                    </td>
+                </td>
+
+                <td>
+                    <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['brand']->value->id_brand;?>
+" type='button' class='btn btn-primary ml-auto'>VER</a>
+                </td>
+
+                <td>
+                    <a href='delete/<?php echo $_smarty_tpl->tpl_vars['brand']->value->id_brand;?>
+'type='button' class="btn btn-danger">Eliminar</button></td>
+                </td>
+
+                <td>
+                    <a href='editar/<?php echo $_smarty_tpl->tpl_vars['brand']->value->{$_smarty_tpl->tpl_vars['id_brand']->value};?>
+' type='button' class="btn btn-success">Editar</button>
+                </td>
+
             </tr>
         <?php ob_start();
 }

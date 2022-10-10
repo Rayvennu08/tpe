@@ -3,7 +3,7 @@ require_once('app/controllers/controllerGames.php');
 require_once('app/controllers/controllerBrands.php');
 require_once('app/controllers/controllerAuth.php');
 
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 $action = 'login'; // acción por defecto
 if (!empty($_GET['action'])) {
@@ -11,9 +11,6 @@ if (!empty($_GET['action'])) {
 }
 
 $params = explode('/', $action);
-
-$gamesController = new controllerGames();
-$brandsController = new controllerBrands();
 
 //Tabla de ruteo
 switch ($params[0]) {
@@ -33,13 +30,24 @@ switch ($params[0]) {
     break;
     
     case 'gameList':
-            $gamesController = new controllerGames();
-            $gamesController->showGameList();
-        break;
+        $gamesController = new controllerGames();
+        $gamesController->showGameList();
+    break;
         
     case 'brandList':
-            $brandsController->showBrandList();
-        break;
+        $brandsController = new controllerBrands();
+        $brandsController->showBrandList();
+    break;
+
+    case "agregar_empresa":
+        $brandsController = new controllerBrands();
+        $brandsController->addBrand();
+    break;
+
+    case 'ver_empresa':
+        $id = $params[1];
+        $brandsController = new controllerBrands();
+        $brandsController->showBrand($id);
     
     case 'ver_juego':
         $id = $params[1];
@@ -52,40 +60,34 @@ switch ($params[0]) {
         $gamesController->saveNewGame();    
     break;
     
+    case 'add':
+        $gamesController = new controllerGames();
+        $gamesController->showFormAddGame();
+    break;
+
     case 'delete':
         $id = $params[1];
         $gamesController = new controllerGames();
         $gamesController->deleteGame($id);
     break;
 
-    case 'editar':
+    case 'modificar':
         $gamesController = new controllerGames();
-        $gamesController->showFormUpdateGame();
-        break;
-
-    case 'add':
-            $gamesController = new controllerGames();
-            $gamesController->showFormAddGame();
-        break;
-
-        case 'Filtrar':
-            $gamesController = new controllerGames();
-            $gamesController->filterGamesByBrand();
-        break;
-        
-    /*case 'filtrado':
-            $brandsController->filterBrands($params[1]);
-        break;*/
-
-    /*
-    case 'delete':
-        // obtengo el parametro de la acción
+        $gamesController->updateGame();
+    break;
+    
+    case 'editar':
         $id = $params[1];
-        $taskController->deleteTask($id);
-        break;
-    */
+        $gamesController = new controllerGames();
+        $gamesController->showFormUpdateGame($id);
+    break;
+
+    case 'Filtrar':
+        $gamesController = new controllerGames();
+        $gamesController->filterGamesByBrand();
+    break;
 
     default:
         echo('<h1>Error 404 - Page not found</h1>');
-        break;
+    break;
 }

@@ -22,4 +22,14 @@ class brandsView{
         $this->smarty->display('templates/filterGames.tpl');
     }
     
+    function showFormAddBrand($brands){
+        $action = "Mandar_DB";
+        $title = "Lista de empresas";
+        $button = "Guardar";
+        $this->smarty->assign('accion', $action);
+        $this->smarty->assign('titulo', $title);
+        $this->smarty->assign('boton', $button);
+        $this->smarty->assign('empresas', $brands);
+        $this->smarty->display('formAddBrands.tpl');
+    }
 }

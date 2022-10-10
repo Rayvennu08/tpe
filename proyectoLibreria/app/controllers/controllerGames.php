@@ -54,9 +54,10 @@ class controllerGames {
         $title = $_POST['title'];
         $qualification = $_POST['qualification'];
         $brand = $_POST['brand'];
+        $desc = $_POST['sinopsis'];
 
-        if((!empty($title)) && (!empty($qualification)) && (!empty($brand))){
-            $this->model->saveRegister($title, $qualification, $brand);
+        if ((!empty($title)) && (!empty($desc)) && (!empty($qualification)) && (!empty($brand))){
+            $this->model->saveRegister($title, $desc, $qualification, $brand);
             header("Location: " . BASE_URL . "gameList"); 
         }
         else{
@@ -65,12 +66,26 @@ class controllerGames {
         }
     }
 
-    function showFormUpdateGame(){
+    function updatGame(){
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $desc = $_POST['sinopsis'];
+        $qualification = $_POST['qualification'];
+        $brand = $_POST['brand'];
+        if ((!empty($title)) && (!empty($desc)) && (!empty($qualification)) && (!empty($brand))) {
+            $this->model->updateGame($game, $desc, $qualification, $brand, $id);
+            header("Location: " . BASE_URL . "gameList");
+        }
+        else {
+            echo "DEBE COMPLETAR LOS CAMPOS CORRESPONDIENTES!!!";
+        }
+    }
+
+    function showFormUpdateGame($id){
         $brands = $this->brandsModel->getAllBrands();
         $game = $this->model->getGameById($id);
         $idBrand = $game->id_juego;
         $brandGame = $this->brandsModel->getBrandById($id_brand);
-        $this->view->showFormUpdateGame();
+        $this->view->showFormUpdateGame($brands, $game, $brandGame);
     }
-
 }

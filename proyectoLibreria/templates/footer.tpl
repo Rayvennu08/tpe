@@ -1,4 +1,4 @@
-    </main>
+    </div>
 </body>
 <!-- fin main container -->
     <footer>

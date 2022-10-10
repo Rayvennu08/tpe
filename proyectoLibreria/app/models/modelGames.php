@@ -35,18 +35,15 @@ class gamesModel{
     }
 
     /*Inserto un item en la base de datos*/
-    public function saveRegister($title, $qualification, $id_brand){
-        $query = $this->db->prepare("INSERT INTO games (juego_name, calificacion, id_brand) VALUES (?, ?, ?)");
-        $query->execute([$title, $qualification, $id_brand]);
+    public function saveRegister($title, $desc, $qualification, $id_brand){
+        $query = $this->db->prepare("INSERT INTO games (juego_name, sinopsis, calificacion, id_brand) VALUES (?, ?, ?, ?)");
+        $query->execute([$title, $desc, $qualification, $id_brand]);
     }
 
-    /*Inserta un juego en la base de datos.*/
-    /*public function insertGame($title, $qualification, $brand) {
-        $query = $this->db->prepare("INSERT INTO games (juego_name, calificacion, brand_name) VALUES (?, ?, ?)");
-        $query->execute([$title, $qualification, $brand]);
-
-        return $this->db->lastInsertId();
-    }*/
+    function updateGame($game, $desc, $qualification, $brand, $id) {
+        $query = $this->db->prepare("UPDATE games SET juego_name = ?, sinopsis = ?, calificacion = ?, id_brand = ? WHERE id_juego = ?");
+        $query->execute([$game, $desc, $qualification, $brand, $id]);
+    }    
 
     /*Elimino un juego por su id */
     public function deleteGameById($id){

@@ -7,14 +7,22 @@
         <div>
             <input type="text" name="id" id="" value="" hidden>
         </div>
+
         <div>
             <label for="title">Videojuego:</label>
             <input type="text" class="form-label" name="title" id="" value="">
         </div>
+
         <div>
             <label for="qualification">Calificacion:</label>
             <input type="text" class="form-label" name="qualification" id="" value="">
         </div>
+
+        <div>
+            <label for="sinopsis">Sinopsis:</label>    
+            <input type="text" class="form-label" name="sinopsis" id="" value="">
+        </div>
+
         <div>
             <label for="brand">Empresa:</label>
             <input type="hidden" name="brand" id="">

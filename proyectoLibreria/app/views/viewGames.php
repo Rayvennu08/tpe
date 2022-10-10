@@ -63,7 +63,7 @@ class gamesView {
     }
 
     function showFormUpdateGame($brands, $game, $brandGame){
-        $accion = "editar";
+        $accion = "modificar";
         $titulo = "Modificacion de videojuego";
         $boton = "Modificar";
         $this->smarty->assign('titulo', $titulo);
@@ -72,6 +72,6 @@ class gamesView {
         $this->smarty->assign('empresas', $brands);
         $this->smarty->assign('empresaJuego', $brandName);
         $this->smarty->assign('juego', $game);
-        $this->smarty->display('addFormGame.tpl');
+        $this->smarty->display('formAddGame.tpl');
     }
 }
