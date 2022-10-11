@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-10 21:54:45
+/* Smarty version 4.2.1, created on 2022-10-11 09:08:33
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\games.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63447885380b40_93985559',
+  'unifunc' => 'content_63451671682ca8_45787954',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62664749422a91066ccd163458e345ad0bd5d228' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\games.tpl',
-      1 => 1665431676,
+      1 => 1665472110,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63447885380b40_93985559 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63451671682ca8_45787954 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -63,8 +63,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <th>Calificacion</th>
             <th>Empresa</th>
             <th>Ver item</th>
-            <th>Eliminar item</th>
-            <th>Editar item</th>
+            <?php if ((isset($_SESSION['USER_ID']))) {?>
+                <th>Eliminar item</th>
+                <th>Editar item</th>
+            <?php }?>
         </thead>
         <tbody>
             <?php
@@ -74,7 +76,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['game']->value) {
 $_smarty_tpl->tpl_vars['game']->do_else = false;
 ?>
                 <tr class="table-info">
-                    <td class="game"><?php echo $_smarty_tpl->tpl_vars['game']->value->juego_name;?>
+                    <td><?php echo $_smarty_tpl->tpl_vars['game']->value->juego_name;?>
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['game']->value->calificacion;?>
 </td>
@@ -92,26 +94,25 @@ $_smarty_tpl->tpl_vars['brand']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <td>
-                        <a href='ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
-' type='button' class='btn btn-primary ml-auto'>VER</a>
+                        <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+" type='button' class='btn btn-primary ml-auto'>Ver</a>
                     </td>
+                    <?php if ((isset($_SESSION['USER_ID']))) {?>
 
-                    <td>
-                        <a href='delete/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
-' type='button' class="btn btn-danger">Eliminar</a>
-                    </td>
-                    
-                    <td>
-                        <a href='editar/<?php echo $_smarty_tpl->tpl_vars['game']->value->{$_smarty_tpl->tpl_vars['id_juego']->value};?>
-' type='button' class="btn btn-success">Editar</a>
-                    </td>
+                        <td>
+                            <a href="delete/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+" type='button' class="btn btn-danger">Eliminar</a>
+                        </td>
+                        
+                        <td>
+                            <a href="editar/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+" type='button' class="btn btn-success">Editar</a>
+                        </td>
+                    <?php }?>
                 </tr>
-            <?php ob_start();
+            <?php
 }
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
-$_prefixVariable1 = ob_get_clean();
-echo $_prefixVariable1;?>
-
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </tbody>
     </table>
 </div>

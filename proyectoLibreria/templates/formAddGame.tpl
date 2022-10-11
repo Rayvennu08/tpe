@@ -55,7 +55,7 @@
         </div>
 
         <div>
-            <label for="genero">Empresa:</label>
+            <label for="brand">Empresa:</label>
             <input type="hidden" name="brand" id="">
             <select name="brand" id="brand">
                 <option value="{$brandGame->id_brand}">{$brandGame->brand_name}</option>
@@ -71,7 +71,5 @@
         </div>
             
     {/if}
-
-
 </form>
 {include file='footer.tpl'}

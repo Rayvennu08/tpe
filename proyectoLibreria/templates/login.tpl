@@ -1,15 +1,15 @@
 {include file="header.tpl"}
-<form action="post">
+<form method="POST" action="validate">
     <h5>{$login}</h5>
     
     <div class="form-group">
         <label for="email">{$email}</label>
-        <input type="email" required class="form-control" id="email" name="email">
+        <input type="email" class="form-control" name="email">
     </div>
 
     <div class="form-group">
         <label for="password">{$pass}</label>
-        <input type="password" required class="form-control" id="password" name="password">
+        <input type="password" class="form-control" name="password">
     </div>
 
     {if $error} 

@@ -27,13 +27,15 @@
             <th>Calificacion</th>
             <th>Empresa</th>
             <th>Ver item</th>
-            <th>Eliminar item</th>
-            <th>Editar item</th>
+            {if isset($smarty.session.USER_ID)}
+                <th>Eliminar item</th>
+                <th>Editar item</th>
+            {/if}
         </thead>
         <tbody>
             {foreach from=$games item=$game}
                 <tr class="table-info">
-                    <td class="game">{$game->juego_name}</td>
+                    <td>{$game->juego_name}</td>
                     <td>{$game->calificacion}</td>
                     {foreach from = $brands item = $brand}
                         {if $brand->id_brand == $game->id_brand}
@@ -41,18 +43,20 @@
                         {/if}
                     {/foreach}
                     <td>
-                        <a href='ver_juego/{$game->id_juego}' type='button' class='btn btn-primary ml-auto'>VER</a>
+                        <a href="ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
                     </td>
+                    {if isset($smarty.session.USER_ID)}
 
-                    <td>
-                        <a href='delete/{$game->id_juego}' type='button' class="btn btn-danger">Eliminar</a>
-                    </td>
-                    
-                    <td>
-                        <a href='editar/{$game->$id_juego}' type='button' class="btn btn-success">Editar</a>
-                    </td>
+                        <td>
+                            <a href="delete/{$game->id_juego}" type='button' class="btn btn-danger">Eliminar</a>
+                        </td>
+                        
+                        <td>
+                            <a href="editar/{$game->id_juego}" type='button' class="btn btn-success">Editar</a>
+                        </td>
+                    {/if}
                 </tr>
-            {{/foreach}}
+            {/foreach}
         </tbody>
     </table>
 </div>

@@ -16,6 +16,15 @@ class gamesModel{
         return $titulos;
     }
 
+    function getGameById($id){
+        $query = $this->db->prepare("SELECT id_juego, juego_name, sinopsis, calificacion, id_brand FROM games WHERE id_juego = ?");
+        $query->execute([$id]);
+
+        $game = $query->fetch(PDO::FETCH_OBJ);
+        
+        return $game;
+    }
+
     function showGameDescription($id){
         $query = $this->db->prepare("SELECT id_juego, juego_name, sinopsis, calificacion, id_brand FROM games WHERE id_juego = ?");
         $query->execute([$id]);

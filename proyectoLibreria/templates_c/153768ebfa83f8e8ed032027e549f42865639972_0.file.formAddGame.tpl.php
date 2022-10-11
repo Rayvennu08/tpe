@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-10 22:36:21
+/* Smarty version 4.2.1, created on 2022-10-11 04:27:37
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\formAddGame.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63448245269911_08000790',
+  'unifunc' => 'content_6344d499923f28_22645017',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '153768ebfa83f8e8ed032027e549f42865639972' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\formAddGame.tpl',
-      1 => 1665433857,
+      1 => 1665454420,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63448245269911_08000790 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6344d499923f28_22645017 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -49,11 +49,6 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         <div>
             <label for="sinopsis">Sinopsis:</label>    
             <input type="text" class="form-label" name="sinopsis" id="" value="">
-        </div>
-
-        <div>
-            <label for="imagen">Portada de videojuego:</label>    
-            <input type="file" name="imagen">
         </div>
 
         <div>
@@ -101,7 +96,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
 
         <div>
-            <label for="genero">Empresa:</label>
+            <label for="brand">Empresa:</label>
             <input type="hidden" name="brand" id="">
             <select name="brand" id="brand">
                 <option value="<?php echo $_smarty_tpl->tpl_vars['brandGame']->value->id_brand;?>
@@ -129,8 +124,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
             
     <?php }?>
-
-
 </form>
 <?php $_smarty_tpl->_subTemplateRender('file:footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

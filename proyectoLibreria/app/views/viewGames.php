@@ -70,8 +70,8 @@ class gamesView {
         $this->smarty->assign('boton', $boton);
         $this->smarty->assign('accion', $accion);
         $this->smarty->assign('empresas', $brands);
-        $this->smarty->assign('empresaJuego', $brandName);
+        $this->smarty->assign('empresaJuego', $brandGame);
         $this->smarty->assign('juego', $game);
-        $this->smarty->display('formAddGame.tpl');
+        $this->smarty->display('templates/formAddGame.tpl');
     }
 }

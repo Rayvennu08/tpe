@@ -19,21 +19,21 @@ class brandsModel{
         return $brands;
     }
 
-    function getBrandById($id_brand){
+    function getBrandById($idBrand){
         $query = $this->db->prepare("SELECT id_brand, brand_name FROM brands WHERE id_brand = ?");
-        $query->execute([$id]);
+        $query->execute([$idBrand]);
 
         $brand = $query->fetch(PDO::FETCH_OBJ);
 
         return $brand;
     }
 
-    function filterBrand($row, $object, $name) {
+    /*function filterBrand($row, $object, $name) {
 
         $query = $this->db->prepare("SELECT $row FROM $object WHERE brand_name = '$name'");
         $query->execute();
         $object = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $object;
-    }
+    }*/
 }

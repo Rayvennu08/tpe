@@ -2,24 +2,30 @@
 require_once ('app/models/modelGames.php');
 require_once ('app/views/viewGames.php');
 require_once ('app/models/modelBrands.php');
+require_once ('app/helpers/helperAuth.php');
 
 
 class controllerGames {
     private $model;
     private $view;
     private $brandsModel;
+    private $helper;
 
     public function __construct() {
         $this->model = new gamesModel();
         $this->view = new gamesView();
         $this->brandsModel = new brandsModel();
+
+        //Seguridad de la pagina
+        $this->helper = new AuthHelper();
     }
     
     /*Funcion para mostrar todos los items de la tabla de games*/
     public function showGameList() {
         $brands = $this->brandsModel->getAllBrands();
         $games = $this->model->getAllTitles();
-        $this->view->showGames($games, $brands);
+
+        $this->view->showGames($games, $brands);        
     }
 
     /*Funcion para eliminar un item de la tabla de games*/
@@ -31,6 +37,7 @@ class controllerGames {
     /*Funcion para ver un item de la tabla de games*/
     function showGame($id){
         $game = $this->model->showGameDescription($id);
+        $this->helper->checkLoggedIn();
         $this->view->showGame($game);
     }
 
@@ -44,7 +51,8 @@ class controllerGames {
     function filterGamesByBrand(){
         $brand = $_POST['brand'];
         $games = $this->model->getGameByIdBrand($brand);
-        
+        $this->helper->checkLoggedIn();
+
         $brand = $this->brandsModel->getAllBrands();
         $this->view->showGamesFiltered($games, $brand);
     }
@@ -66,7 +74,7 @@ class controllerGames {
         }
     }
 
-    function updatGame(){
+    function updateGame(){
         $id = $_POST['id'];
         $title = $_POST['title'];
         $desc = $_POST['sinopsis'];
@@ -84,8 +92,8 @@ class controllerGames {
     function showFormUpdateGame($id){
         $brands = $this->brandsModel->getAllBrands();
         $game = $this->model->getGameById($id);
-        $idBrand = $game->id_juego;
-        $brandGame = $this->brandsModel->getBrandById($id_brand);
+        $idBrand = $game->id_brand;
+        $brandGame = $this->brandsModel->getBrandById($idBrand);
         $this->view->showFormUpdateGame($brands, $game, $brandGame);
     }
 }
