@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 09:05:07
+/* Smarty version 4.2.1, created on 2022-10-11 22:19:24
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634515a3532c72_80067110',
+  'unifunc' => 'content_6345cfcc8a1657_72060540',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0e0d6c1b08ad54f64acb0f8bfd21f8f58f4fe4fe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\header.tpl',
-      1 => 1665471905,
+      1 => 1665519560,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634515a3532c72_80067110 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6345cfcc8a1657_72060540 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -38,14 +38,14 @@ function content_634515a3532c72_80067110 (Smarty_Internal_Template $_smarty_tpl)
         <header>
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="brandList">Empresas</a>
-                    <a class="navbar-brand" href="gameList">Ver juegos</a>
-                    <?php if (!(isset($_SESSION['USER_ID']))) {?>
-                        <a class="navbar-brand" href="login">Login</a>
-                    <?php } else { ?> 
-                        <a class="navbar-brand" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
+                        <a class="navbar-brand" href="brandList">Empresas</a>
+                        <?php if (!(isset($_SESSION['USER_ID']))) {?>
+                            <a class="navbar-brand" href="login">Login</a>
+                        <?php } else { ?> 
+                            <a class="navbar-brand" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
 )</a>
-                    <?php }?>
+                        <?php }?>
+                        <a class="navbar-brand" href="gameList">Ver juegos</a>
                 </div>
             </nav>
         </header>

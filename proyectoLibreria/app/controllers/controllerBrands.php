@@ -16,23 +16,66 @@ class controllerBrands{
         $this->helper = new AuthHelper();
     }
 
-    public function showBrandList(){
+    function showBrandList(){
+        $this->helper->checkLoggedIn();
         $brands = $this->model->getAllBrands();
-
         $this->view->showBrands($brands);
+
     }
     
-    public function showBrand(){
-        
+    function showBrand($id){
+        $this->helper->checkLoggedIn();
+        $brand = $this->model->getBrandById($id);
+        $this->view->showBrand($brand);
     }
 
-    /*public function filterBrands($name){
-        $games = $this->model->filterBrand("*", "games", $name);
-        $this->view->filterBrand($games);
-    }*/
+    function showFormUpdateBrand($id){
+        $this->helper->checkLoggedIn();
+        $brand = $this->model->getBrandById($id);
+        $this->view->showFormModifyBrand($brand);
+    }
 
+    function updateBrand(){
+        $this->helper->checkLoggedIn();
+        $id = $_POST['id'];
+        $brand = $_POST['brand'];
+        if(!empty($brand)){
+            $this->model->updateBrand($brand, $id);
+            header("Location: " . BASE_URL . "brandList");
+        }
+        else {
+            echo "DEBE COMPLETAR LOS CAMPOS CORRESPONDIENTES!";
+        }
+    }
+
+    function saveNewBrand(){
+        $this->helper->userRestrict();
+
+        $brand = $_POST['brand'];
+        if (!empty($brand)){
+            $this->model->saveBrand($brand);
+            header("Location: " . BASE_URL . "brandList");
+        }
+        else{
+            echo "DEBE COMPLETAR LOS CAMPOS CORRESPONDIENTES!";
+        }
+    }
+    
     public function addBrand(){
+        $this->helper->userRestrict();
+        $this->view->showFormAddBrand();
+    }
+    
+    function showFormAddBrands(){
+        session_start();
         $brands = $this->model->getAllBrands();
         $this->view->showFormAddBrand($brands);
     }
+
+    function deleteBrand($id){
+        $this->helper->userRestrict();
+        $this->model->deleteBrandById($id);
+        header("Location: " . BASE_URL . "brandList");
+    }
+
 }

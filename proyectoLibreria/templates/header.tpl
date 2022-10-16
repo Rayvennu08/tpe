@@ -14,13 +14,13 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="brandList">Empresas</a>
-                    <a class="navbar-brand" href="gameList">Ver juegos</a>
-                    {if !isset($smarty.session.USER_ID)}
-                        <a class="navbar-brand" href="login">Login</a>
-                    {else} 
-                        <a class="navbar-brand" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
-                    {/if}
+                        <a class="navbar-brand" href="brandList">Empresas</a>
+                        {if !isset($smarty.session.USER_ID)}
+                            <a class="navbar-brand" href="login">Login</a>
+                        {else} 
+                            <a class="navbar-brand" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+                        {/if}
+                        <a class="navbar-brand" href="gameList">Ver juegos</a>
                 </div>
             </nav>
         </header>

@@ -17,7 +17,7 @@ class controllerAuth{
 
     /*Funcion para validar el login del usuario*/
     public function validateUser() {
-
+        
         // toma los datos del form
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -37,7 +37,7 @@ class controllerAuth{
             header("Location: " . BASE_URL . "gameList");
         } else {
             // si los datos son incorrectos muestro el form con un erro
-           $this->view->showFormLogin("El usuario o la contraseña no existe.");
+           $this->view->showLogin("El usuario o la contraseña no existe.");
         } 
     }
     /*Funcion para desloguear al usuario*/

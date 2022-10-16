@@ -9,7 +9,7 @@
     <tbody>
         {foreach from=$games item=$game}
                 <tr>
-                    <td><a href="show.php?id=<?php echo ?>
+                    <td>{$game->juego_name}</td>
                     <td>{$game->calificacion}</td>
                     <td>{$game->brand_name}</td>
                 </tr>

@@ -19,21 +19,33 @@ class brandsModel{
         return $brands;
     }
 
-    function getBrandById($idBrand){
+    function getBrandById($id){
         $query = $this->db->prepare("SELECT id_brand, brand_name FROM brands WHERE id_brand = ?");
-        $query->execute([$idBrand]);
+        $query->execute([$id]);
 
         $brand = $query->fetch(PDO::FETCH_OBJ);
 
         return $brand;
     }
 
-    /*function filterBrand($row, $object, $name) {
+    function updateBrand($brand, $id){
+        $query = $this->db->prepare("UPDATE brands SET brand_name = ? WHERE id_brand = ?");
+        $query->execute([$brand, $id]);
+    }
 
-        $query = $this->db->prepare("SELECT $row FROM $object WHERE brand_name = '$name'");
-        $query->execute();
-        $object = $query->fetchAll(PDO::FETCH_OBJ);
+    function saveBrand($brand){
+        $query = $this->db->prepare("INSERT INTO brands (brand_name) VALUES (?)");
+        $query->execute([$brand]);     
+    }
 
-        return $object;
-    }*/
+    function deleteBrandById($id) {
+        try {
+            $query = $this->db->prepare('DELETE FROM brands WHERE id_brand = ?');
+            $query->execute([$id]);
+
+        }
+        catch(Exception) {
+            header('Location:' . BASE_URL . 'brandList');
+        }
+    }
 }

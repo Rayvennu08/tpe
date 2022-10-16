@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-11 09:08:33
+/* Smarty version 4.2.1, created on 2022-10-16 18:07:59
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\games.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63451671682ca8_45787954',
+  'unifunc' => 'content_634c2c5fd0bef8_73567449',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62664749422a91066ccd163458e345ad0bd5d228' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\games.tpl',
-      1 => 1665472110,
+      1 => 1665936478,
       2 => 'file',
     ),
   ),
@@ -22,17 +22,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63451671682ca8_45787954 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c2c5fd0bef8_73567449 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <h1><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h1>
 
-<div>
-    <p>↶ Pulsa aqui para insertar tu videojuego favorito</p>
-    <a href="add" type='button' class='btn btn-primary ml-auto'>Agregar videojuego</a>
-</div>
+<?php if ((isset($_SESSION['USER_ID']))) {?>
+    <div>
+        <p>↶ Pulsa aqui para insertar tu videojuego favorito</p>
+        <a href="add" type='button' class='btn btn-primary ml-auto'>Agregar videojuego</a>
+    </div>
+<?php }?>
 
 <div>
     <form action="Filtrar" method="POST">
@@ -93,12 +95,11 @@ $_smarty_tpl->tpl_vars['brand']->do_else = false;
                     <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                    <td>
-                        <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
-" type='button' class='btn btn-primary ml-auto'>Ver</a>
-                    </td>
                     <?php if ((isset($_SESSION['USER_ID']))) {?>
-
+                        <td>                        
+                            <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+" type='button' class='btn btn-primary ml-auto'>Ver</a>
+                        </td>
                         <td>
                             <a href="delete/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 " type='button' class="btn btn-danger">Eliminar</a>
@@ -107,6 +108,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <td>
                             <a href="editar/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 " type='button' class="btn btn-success">Editar</a>
+                        </td>
+                    <?php } else { ?>
+                        <td>                        
+                            <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+" type='button' class='btn btn-primary ml-auto'>Ver</a>
                         </td>
                     <?php }?>
                 </tr>

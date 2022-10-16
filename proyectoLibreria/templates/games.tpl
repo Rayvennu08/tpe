@@ -2,10 +2,12 @@
 
 <h1>{$titulo}</h1>
 
-<div>
-    <p>↶ Pulsa aqui para insertar tu videojuego favorito</p>
-    <a href="add" type='button' class='btn btn-primary ml-auto'>Agregar videojuego</a>
-</div>
+{if isset($smarty.session.USER_ID)}
+    <div>
+        <p>↶ Pulsa aqui para insertar tu videojuego favorito</p>
+        <a href="add" type='button' class='btn btn-primary ml-auto'>Agregar videojuego</a>
+    </div>
+{/if}
 
 <div>
     <form action="Filtrar" method="POST">
@@ -42,17 +44,20 @@
                             <td>{$brand->brand_name}</td>
                         {/if}
                     {/foreach}
-                    <td>
-                        <a href="ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
-                    </td>
                     {if isset($smarty.session.USER_ID)}
-
+                        <td>                        
+                            <a href="ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
+                        </td>
                         <td>
                             <a href="delete/{$game->id_juego}" type='button' class="btn btn-danger">Eliminar</a>
                         </td>
                         
                         <td>
                             <a href="editar/{$game->id_juego}" type='button' class="btn btn-success">Editar</a>
+                        </td>
+                    {else}
+                        <td>                        
+                            <a href="ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
                         </td>
                     {/if}
                 </tr>

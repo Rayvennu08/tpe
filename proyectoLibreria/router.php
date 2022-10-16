@@ -5,7 +5,7 @@ require_once('app/controllers/controllerAuth.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-$action = 'login'; // acción por defecto
+$action = 'gameList'; // acción por defecto
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -48,6 +48,29 @@ switch ($params[0]) {
         $id = $params[1];
         $brandsController = new controllerBrands();
         $brandsController->showBrand($id);
+    break;
+
+    case 'editar_empresa':
+        $id = $params[1];
+        $brandsController = new controllerBrands();
+        $brandsController->showFormUpdateBrand($id);
+    break;
+
+    case 'modificar_empresa':
+        $brandsController = new controllerBrands();
+        $brandsController->updateBrand();
+    break;
+        
+    case 'save_brand':
+        $brandsController = new controllerBrands();
+        $brandsController->saveNewBrand();
+    break;
+
+    case 'delete_brand':
+        $id = $params[1];
+        $brandsController = new controllerBrands();
+        $brandsController->deleteBrand($id);
+    break;
     
     case 'ver_juego':
         $id = $params[1];

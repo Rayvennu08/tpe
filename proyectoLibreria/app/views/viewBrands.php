@@ -16,20 +16,36 @@ class brandsView{
         $this->smarty->display('templates/brands.tpl');
     }
 
-    /*function filterBrand($games){
-        $this->smarty->assign('games', $games);
-
-        $this->smarty->display('templates/filterGames.tpl');
-    }*/
     
-    function showFormAddBrand($brands){
-        $action = "Mandar_DB";
-        $title = "Lista de empresas";
-        $button = "Guardar";
-        $this->smarty->assign('accion', $action);
-        $this->smarty->assign('titulo', $title);
-        $this->smarty->assign('boton', $button);
-        $this->smarty->assign('empresas', $brands);
+    function showBrand($id){
+        $titulo = "Informacion sobre la empresa";
+
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('brand', $id);
+
+        $this->smarty->display('brandDetail.tpl');
+    }
+
+    function showFormModifyBrand($brand){
+        $accion = "modificar_empresa";
+        $titulo = "Modificar empresa";
+        $boton = "Actualizar";
+        $this->smarty->assign('accion', $accion);
+        $this->smarty->assign('brand', $brand);
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('boton', $boton);
+        $this->smarty->display('formAddBrands.tpl');  
+    }
+    
+    function showFormAddBrand(){
+        $accion = "save_brand";
+        $titulo = "Agregar empresa";
+        $boton = "Guardar";
+        $this->smarty->assign('accion', $accion);
+        $this->smarty->assign('titulo', $titulo);
+        $this->smarty->assign('boton', $boton);
+        // $this->smarty->assign('empresas', $brands);
         $this->smarty->display('formAddBrands.tpl');
     }
+        
 }
