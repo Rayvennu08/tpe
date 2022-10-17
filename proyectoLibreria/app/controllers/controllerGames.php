@@ -41,7 +41,8 @@ class controllerGames {
     function showGame($id){
         $this->helper->checkLoggedIn();
         $game = $this->model->showGameDescription($id);
-        $this->view->showGame($game);
+        $brand = $this->brandsModel->getAllBrands();
+        $this->view->showGame($game, $brand);
     }
 
     function showFormAddGame() {
