@@ -36,7 +36,7 @@
                     <td>{$game->calificacion}</td>
                     {if isset($smarty.session.USER_ID)}
                         <td>                        
-                            <a href="/ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
+                            <a href="ver_juego/{$game->id_juego}" type='button' class='btn btn-primary ml-auto'>Ver</a>
                         </td>
                         <td>
                             <a href="delete/{$game->id_juego}" type='button' class="btn btn-danger">Eliminar</a>

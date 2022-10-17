@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 03:05:40
+/* Smarty version 4.2.1, created on 2022-10-17 22:45:25
   from 'C:\xampp\htdocs\tpe\proyectoLibreria\templates\filterGames.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634caa64bdb106_90300669',
+  'unifunc' => 'content_634dbee51735c5_11704081',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68c34a2fb4a961dc402fd8c5bb2927019391b998' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\proyectoLibreria\\templates\\filterGames.tpl',
-      1 => 1665968739,
+      1 => 1666039510,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634caa64bdb106_90300669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634dbee51735c5_11704081 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -86,7 +86,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </td>
                     <?php if ((isset($_SESSION['USER_ID']))) {?>
                         <td>                        
-                            <a href="/ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
+                            <a href="ver_juego/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_juego;?>
 " type='button' class='btn btn-primary ml-auto'>Ver</a>
                         </td>
                         <td>

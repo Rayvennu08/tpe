@@ -36,7 +36,7 @@ class gamesModel{
     }
 
     function getGameByIdBrand($id){
-        $query = $this->db->prepare("SELECT juego_name, calificacion, id_brand FROM games WHERE id_brand = ?");
+        $query = $this->db->prepare("SELECT id_juego, juego_name, calificacion, id_brand FROM games WHERE id_brand = ?");
         $query->execute([$id]);
 
         $games = $query->fetchAll(PDO ::FETCH_OBJ);

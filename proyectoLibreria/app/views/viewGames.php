@@ -20,6 +20,7 @@ class gamesView {
     }
 
     function showGames($games, $brands){
+        
         $this->smarty->assign('titulo', "Tabla de videojuegos");
         $this->smarty->assign('games', $games);
         $this->smarty->assign('brands', $brands);
