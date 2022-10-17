@@ -44,7 +44,7 @@ class gamesView {
         $this->smarty->assign('games', $games);
         $this->smarty->assign('brands', $brand);
 
-        $this->smarty->display('templates/games.tpl');
+        $this->smarty->display('templates/filterGames.tpl');
     }
 
     /*Funcion para mostrar formulario al usuario
